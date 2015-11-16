@@ -1,0 +1,24 @@
+<h1>Drivers#new</h1>
+
+<div>
+	<%= form_for @driver do |f| %>
+		<%= f.label :f_name, "First Name" %><br>
+		<%= f.text_field :f_name %><br>
+		<%= f.label :l_name, "Last Name" %> <br>
+		<%= f.text_field :l_name %> <br>
+	<%= f.fields_for :license do |license_builder| %>
+		<%= license_builder.label :number, "Drivers License" %><br>
+		<%= license_builder.text_field :number %><br>
+		<%= license_builder.label :state%><br>
+		<%= license_builder.text_field :state%><br>
+	<% end %>
+
+		<%= f.submit "New Driver" %>
+
+
+
+	<% end %>
+
+</div>
+
+<%= link_to "Cancel", drivers_path %>
